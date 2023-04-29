@@ -7,7 +7,7 @@ include("functions.php");
 if($_SERVER['REQUEST_METHOD'] == "POST")
 {
 //something was posted
-$student_name = $_POST['student_email'];
+$student_email = $_POST['student_email'];
 $password = $_POST['password'];
 
 if(!empty($student_email) && !empty($password) && !is_numeric($student_email))
@@ -27,20 +27,15 @@ if(!empty($student_email) && !empty($password) && !is_numeric($student_email))
             {
                 $_SESSION['user_id'] = $user_data['user_id'];
                 header("Location: index.php");
+                die;
             }
-            
     
         }
 
   }
 
-  header("Location: login.php");
-  die;
-
-
 }else
 {
-  echo "Please enter some valid information!";
 
 }
 
@@ -81,11 +76,13 @@ if(!empty($student_email) && !empty($password) && !is_numeric($student_email))
       <input type="checkbox" id="chk" aria-hidden="true">
   
         <div class="signup">
-          <form action="connection.php" method="POST">
+          <form method="POST">
             <label for="chk" aria-hidden="true">Log in</label>
             <input type="email" name="student_email" placeholder="Email" required="">
             <input type="password" name="password" placeholder="Password" required="">
             <button type="Signup">Log in</button>
+            <div class="error-message"> 
+            <a href="signup.php">Sign in</a>
           </form>
         </div>
   

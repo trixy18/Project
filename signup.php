@@ -69,6 +69,8 @@ if(!empty($student_email) && !empty($password) && !is_numeric($student_email))
             <input type="email" name="student_email" placeholder="Email" required="">
             <input type="password" name="password" placeholder="Password" required="">
             <button type="Signup">Sign up</button>
+            <div class="error-message"> 
+            <a href="login.php" class="">Log in</a>
           </form>
         </div>
   

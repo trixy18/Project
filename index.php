@@ -50,7 +50,7 @@ $user_data = check_login($con);
 	 		</li>
 		
 			 <li>
-				<a href="login.html"><span class="las la-shopping-bag"></span>
+				<a href="login.php"><span class="las la-shopping-bag"></span>
 					<span>Log out</span>
 				</a>
 			</li>

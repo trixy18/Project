@@ -88,3 +88,11 @@ button:hover{
 #chk:checked ~ .signup label{
 	transform: scale(.6);
 }
+.error-message {
+
+	padding:0px;
+	margin-left: 55px;
+	margin-top: 100px;
+	color: #6f00ff;
+	font-weight: bold;
+  }
