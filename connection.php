@@ -1,16 +1,18 @@
 <?php
-$n=$_POST['txt'];
-$c=$_POST['email'];
-$d=$_POST['pswd'];
-$con=mysqli_connect("localhost","root","","Project");
-$sql="INSERT INTO Sign_up (student_name,student_email,password) values ('$n','$c','$d')";
-$r=mysqli_query($con,$sql);
-if($r)
-{
-    echo "WELCOME TO ATTENDANCE TRACKER";
+
+$host = "localhost";
+$student_email = "root";
+$password = "";
+$dbname = "project";
+
+if(!$con = mysqli_connect($host,$student_email,$password,$dbname));
+if (!$connection) {
+    die('Failed to connect to the database: ' . mysqli_connect_error());
+} else {
+    echo 'Connection successful!';
 }
-else
-{
-    echo "ERROR";
-}
+
+mysqli_close($connection);
 ?>
+
+

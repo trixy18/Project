@@ -1,3 +1,37 @@
+<?php
+session_start();
+
+include("connection.php");
+include("functions.php");
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+//something was posted
+$student_email = $_POST['student_email'];
+$password = $_POST['password'];
+
+if(!empty($student_email) && !empty($password) && !is_numeric($student_email))
+{
+  //save to database
+  $user_id = random_num(20);
+  $query = "insert into sign_up (user_id,student_email,password) values ('$user_id','$student_email','$password')";
+
+  mysqli_query($con, $query);
+
+  header("Location: login.php");
+  die;
+
+
+}else
+{
+  echo "Please enter some valid information!";
+
+}
+
+}
+
+
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,7 +42,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!DOCTYPE html>
+<html>
+  <head>
+  <style>
+    body  {
+      background-image: url("https://media.giphy.com/media/Q34Q46x7bUUKJfbn0s/giphy.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    </style>
+    </head>
   <html>
   <head>
     <title>Slide Navbar</title>
@@ -16,15 +59,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
   </head>
   <body>
+    
     <div class="main">  	
       <input type="checkbox" id="chk" aria-hidden="true">
   
         <div class="signup">
-          <form action="connection.php" method="POST">
+          <form method="POST">
             <label for="chk" aria-hidden="true">Sign up</label>
-            <input type="text" name="txt" placeholder="User name" required="">
-            <input type="email" name="email" placeholder="Email" required="">
-            <input type="password" name="pswd" placeholder="Password" required="">
+            <input type="email" name="student_email" placeholder="Email" required="">
+            <input type="password" name="password" placeholder="Password" required="">
             <button type="Signup">Sign up</button>
           </form>
         </div>
