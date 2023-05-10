@@ -110,7 +110,7 @@ $user_data = check_login($con);
 					<div class="projects">
 						<div class="card">
 							<div class="card-header">
-								<h3 class="heading">List of Students</h3>
+								<h3 class="heading">Attendance</h3>
 								<a href="seeall.html"><button>See all<span class="las la-arrow-right"></span></button></a>
 							
 							</div>
@@ -180,9 +180,9 @@ $user_data = check_login($con);
 								
 								<div class="customer">
 									<div class="info">
-										<img src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40" alt="">
+										<img src="https://assets.codepen.io/3853433/internal/avatars/users/default.png?format=auto&version=1617122449&width=40&height=40" alt=""> 
 										<div>
-											<h4 class="heading">IT 380 Fundamentals of Database System</h4>
+											<h4 class="heading">IT 380 Fundamentals Database</h4>
 										</div>
 									</div>
 									<div class="contact">
